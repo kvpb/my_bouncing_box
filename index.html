@@ -1,0 +1,41 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >Not loaded</div>
+  <script type="text/javascript">
+    // YOUR CODE
+    var element = document.getElementById("my_bouncing_box");
+    var w_window = window.innerWidth;
+    var h_window = window.innerHeight;
+    var w_element = element.width;
+    var h_element = element.height;
+    var x_element = element.getBoundingClientRect().left; //var x_element__left
+    var x_element__plus = element.getBoundingClientRect().right; ; //var x_element__right
+    var y_element = element.getBoundingClientRect().bottom; //var y_element__minus
+    var y_element__plus = element.getBoundingClientRect().top; //var y_element__plus
+    var dx = 1;
+    var dy = -1;
+
+    function f() { //function move
+        while ( x_element__plus < w_window && y_element__plus < h_window || x_element > 0 && y_element > 0 ) {
+            if ( x_element + dx > w_window - w_element || x_element + dx < w_element ) {
+                dx = -dx;
+            }
+            if ( y_element + dy > h_window - h_element || y_element + dy < h_element ) {
+                dy = -dy;
+            }
+            x_element += dx;
+            y_element += dy;
+            document.getElementById("my_bouncing_box").style.left = `${x_element}px`;
+            document.getElementById("my_bouncing_box").style.top = `${y_element}px`;
+        }
+    }
+
+    setInterval(f, 10);
+    /*Google Javascript document getElementById
+    Google Javascript setInterval
+    Google JavaScript XMLHttpRequest
+    Google JSON format
+    Google API
+    Google HTML Javascript OnChange
+    Google HTML Javascript OnInput*/
+  </script>
+</html>
