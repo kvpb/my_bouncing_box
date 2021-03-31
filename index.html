@@ -16,10 +16,10 @@
 
     function f() { //function move
 //        while ( x_element__plus < w_window && y_element__plus < h_window || x_element > 0 && y_element > 0 ) {
-            if ( x_element + dx > w_window - w_element || x_element + dx < w_element ) {
+            if ( x_element + dx > w_window - w_element || x_element + dx < w_window - w_window ) {
                 dx = -dx;
             }
-            if ( y_element + dy > h_window - h_element || y_element + dy < h_element ) {
+            if ( y_element + dy > h_window - h_element || y_element + dy < h_window - h_window ) {
                 dy = -dy;
             }
             x_element += dx;
