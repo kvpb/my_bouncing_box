@@ -7,9 +7,9 @@
     var h_window = window.innerHeight;
     var w_element = element.width;
     var h_element = element.height;
-    var x_element = element.getBoundingClientRect().left; //var x_element__left
+    var x_element = element.getBoundingClientRect().left; //var x_element__left //var x_element__minus
     var x_element__plus = element.getBoundingClientRect().right; //var x_element__right
-    var y_element = element.getBoundingClientRect().bottom; //var y_element__minus
+    var y_element = element.getBoundingClientRect().bottom;
     var y_element__plus = element.getBoundingClientRect().top;
     var dx = 1;
     var dy = -1;
@@ -19,7 +19,7 @@
             if ( x_element + dx > w_window - x_element__plus || x_element + dx < w_window - w_window ) {
                 dx = -dx;
             }
-            if ( y_element + dy > h_window - y_element__plus || y_element + dy < h_window - h_window ) {
+            if ( y_element + dy > h_window - y_element || y_element + dy < h_window - h_window ) {
                 dy = -dy;
             }
             x_element += dx;
@@ -29,7 +29,7 @@
 //        }
     }
 
-    setInterval(f, 10);
+    setInterval(f, 1);
     /*Google Javascript document getElementById
     Google Javascript setInterval
     Google JavaScript XMLHttpRequest
