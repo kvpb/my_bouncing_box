@@ -15,7 +15,7 @@
     var dy = -1;
 
     function f() { //function move
-        while ( x_element__plus < w_window && y_element__plus < h_window || x_element > 0 && y_element > 0 ) {
+//        while ( x_element__plus < w_window && y_element__plus < h_window || x_element > 0 && y_element > 0 ) {
             if ( x_element + dx > w_window - w_element || x_element + dx < w_element ) {
                 dx = -dx;
             }
@@ -26,7 +26,7 @@
             y_element += dy;
             document.getElementById("my_bouncing_box").style.left = `${x_element}px`;
             document.getElementById("my_bouncing_box").style.top = `${y_element}px`;
-        }
+//        }
     }
 
     setInterval(f, 10);
